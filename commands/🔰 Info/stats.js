@@ -20,34 +20,8 @@ module.exports = {
       
       let global = client.stats.get("global");
       let guild = client.stats.get(message.guild.id);
-      let premiums = client.premium.get("premiumlist", "list");
-      let guilds = [];
-      let users = [];
 
-      for (let i = 0; i < premiums.length; i++) {
-        try {
-          if (Object.keys(premiums[i])[0] === "g") {
-            let guild = client.guilds.cache.get(Object.values(premiums[i])[0])
-            if (!guild) {
-              client.premium.get("premiumlist", (value) => value.g === Object.values(premiums[i])[0], "list");
-              continue;
-            }
-            guilds.push(guild.name)
-          }
-        } catch {}
-      }
-      for (let i = 0; i < premiums.length; i++) {
-        try {
-          if (Object.keys(premiums[i])[0] === "u") {
-            let user = await client.users.fetch(Object.values(premiums[i])[0]);
-            if (!user) {
-              client.premium.get("premiumlist", (value) => value.u === Object.values(premiums[i])[0], "list");
-              continue;
-            }
-            users.push(user.tag)
-          }
-        } catch {}
-      }
+
       let size = client.setups.filter(s => s.textchannel != "0").size + client.guilds.cache.array().length / 3;
       if (size > client.guilds.cache.array().length) size = client.guilds.cache.array().length;
       message.channel.send(new MessageEmbed().setColor(es.color).setThumbnail(es.thumb ? es.footericon : null).setFooter(es.footertext, es.footericon)
@@ -57,7 +31,6 @@ module.exports = {
         .addField("\u200b", "\u200b")
         .addField("⚙️ SERVER Commands used:", `>>> \`${guild.commands} Commands\` used in\n**this** Server`, true)
         .addField("🎵 SERVER Songs played:", `>>> \`${guild.songs} Songs\` played in\n**this** Server`, true)
-        .addField("📰 GLOBAL Premium list:", `>>> \`${guilds.length} Guilds\`\n\`${users.length} Users\`\n having Premium`, true)
         .setTitle(`💿 The Stats of ${client.user.username}`)
       );
     } catch (e) {
