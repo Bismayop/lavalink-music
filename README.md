@@ -11,8 +11,7 @@ Order discord bot server : https://billing.futurehosting.org/index.php?rp=/store
 
 ## Credits
 
-[@tomato](https://github.com/Tomato6966/) For the Reacting system to messages, great Idea i adopted that [@Tomato6966/Musicium](https://github.com/Tomato6966/Musicium)
-[@tomato](https://github.com/Tomato6966/) For the Reacting system to messages, great Idea, I adopted that [@Tomato6966/Musicium](https://github.com/Tomato6966/Musicium)
+[@tomato](https://github.com/Tomato6966/) For the Reacting system to messages, great Idea i adopted that [@Tomato6966/LAVA MUSIC](https://github.com/Tomato6966/discord-js-lavalink-Music-Bot-erela-js)
 
 Thanks For Tomato6966
 Check Out Tomato6966 Gtihub Repo
